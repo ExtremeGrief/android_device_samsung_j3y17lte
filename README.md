@@ -1,4 +1,4 @@
-# TWRP device tree for the Samsung Galaxy J4 (SM-J400; j4lte)
+# TWRP device tree for the Samsung Galaxy J3 2017 (SM-J330X; j3y17lte)
 
 ## Build Steps
 
@@ -7,7 +7,7 @@
 # source.
 
 $ . build/envsetup.sh # Prepare build environment.
-$ lunch omni_j4lte-eng # 'Lunch' the j4lte configuration.
+$ lunch omni_j3y17lte-eng # 'Lunch' the j3y17lte configuration.
 $ mka recoveryimage # Build.
 ```
 
@@ -21,4 +21,4 @@ You may obtain a copy of the License at
 http://www.apache.org/licenses/LICENSE-2.0
 ```
 
-This tree is based on: https://github.com/synt4x93/android_device_samsung_xcover4lte. Thanks to [@synt4x93](https://github.com/synt4x93)!
+This tree is based on: https://github.com/hendramanudinata03/android_device_samsung_j4lte.
