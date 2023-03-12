@@ -1,37 +1,20 @@
-# System
-/system         ext4    /dev/block/platform/13540000.dwmmc0/by-name/SYSTEM      flags=backup=0;display="System"
-/system_image   emmc    /dev/block/platform/13540000.dwmmc0/by-name/SYSTEM      flags=backup=1
+# Non-Removable Partitions
+/boot		    emmc	/dev/block/platform/13540000.dwmmc0/by-name/BOOT	       flags=backup=1;display="Kernel"
+/cache		    ext4	/dev/block/platform/13540000.dwmmc0/by-name/CACHE          flags=backup=1;wipeingui;display="Cache"
+/cpefs		    emmc	/dev/block/platform/13540000.dwmmc0/by-name/CPEFS          flags=backup=1;display="CPEFS";subpartitionof=/efs
+/data		    ext4	/dev/block/platform/13540000.dwmmc0/by-name/USERDATA       flags=encryptable=footer;length=-20480
+/efs		    ext4	/dev/block/platform/13540000.dwmmc0/by-name/EFS	           flags=backup=1;display="EFS"
+/m9kefs         emmc    /dev/block/platform/13540000.dwmmc0/by-name/m9kefs1        flags=backup=1;display="m9kefs"
+/m9kefs2        emmc    /dev/block/platform/13540000.dwmmc0/by-name/m9kefs2        flags=backup=1;subpartitionof=/m9kefs
+/m9kefs3        emmc    /dev/block/platform/13540000.dwmmc0/by-name/m9kefs3        flags=backup=1;subpartitionof=/m9kefs
+/modem		    emmc	/dev/block/platform/13540000.dwmmc0/by-name/RADIO          flags=backup=1;display="Baseband"
+/misc           emmc    /dev/block/platform/13540000.dwmmc0/by-name/OTA            flags=backup=1;display="Misc"
+/preload	    ext4	/dev/block/platform/13540000.dwmmc0/by-name/HIDDEN	       flags=backup=1;wipeingui;display="Preload"
+/recovery	    emmc	/dev/block/platform/13540000.dwmmc0/by-name/RECOVERY       flags=backup=1;display="Recovery"
+/system		    ext4	/dev/block/platform/13540000.dwmmc0/by-name/SYSTEM         flags=backup=1;wipeingui;display="System"
+/system_image   emmc    /dev/block/platform/13540000.dwmmc0/by-name/SYSTEM       
 
-# Vendor
-/vendor         ext4    /dev/block/platform/13540000.dwmmc0/by-name/VENDOR      flags=backup=0;display="Vendor"
-/vendor_image   emmc    /dev/block/platform/13540000.dwmmc0/by-name/VENDOR      flags=backup=1
+# Removable Partitions
 
-# Cache
-/cache          ext4    /dev/block/platform/13540000.dwmmc0/by-name/CACHE       flags=display="Cache"
-
-# Data
-/data           ext4    /dev/block/platform/13540000.dwmmc0/by-name/USERDATA    flags=display="Data";encryptable=footer;length=-20480
-
-# Boot
-/boot           emmc    /dev/block/platform/13540000.dwmmc0/by-name/BOOT        flags=backup=1;display="Boot"
-
-# Recovery
-/recovery       emmc    /dev/block/platform/13540000.dwmmc0/by-name/RECOVERY    flags=backup=1;display="Recovery"
-
-# Misc
-/misc           emmc    /dev/block/platform/13540000.dwmmc0/by-name/MISC        flags=backup=0;display="Misc"
-
-# EFS
-/efs            emmc    /dev/block/platform/13540000.dwmmc0/by-name/EFS         flags=backup=1;display="EFS"
-
-# CPEFS
-/cpefs          emmc    /dev/block/platform/13540000.dwmmc0/by-name/CPEFS       flags=backup=1;display="CPEFS"
-
-# Radio
-/radio          emmc    /dev/block/platform/13540000.dwmmc0/by-name/RADIO       flags=backup=1;display="Baseband"
-
-# MicroSD
-/external_sd    auto    /dev/block/mmcblk1p1    /dev/block/mmcblk1              flags=display="MicroSD";storage;wipeingui;removable
-
-# USB OTG
-/usb-otg        auto    /dev/block/sda1         /dev/block/sda                  flags=display="USB OTG";storage;wipeingui;removable
+/external_sd	vfat	/dev/block/mmcblk1p1 /dev/block/mmcblk1	                   flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	    vfat	/dev/block/sda1      /dev/block/sda				           flags=display="USB-OTG";storage;wipeingui;removable

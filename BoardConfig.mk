@@ -1,4 +1,4 @@
-LOCAL_PATH := device/samsung/j4lte
+LOCAL_PATH := device/samsung/j3y17lte
 
 # Firmware
 TARGET_NO_BOOTLOADER := true
@@ -35,15 +35,16 @@ BOARD_MKBOOTIMG_ARGS += --dt $(LOCAL_PATH)/kernel/dtb.img
 
 # File systems
 TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
 RECOVERY_SDCARD_ON_DATA := true
 TW_INCLUDE_NTFS_3G := true
 
 # Display
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel/brightness"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_BRIGHTNESS_PATH := "/sys/devices/14800000.dsim/backlight/panel/brightness"
 TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_BRIGHTNESS := 128
+TW_DEFAULT_BRIGHTNESS := 150
 TW_THEME := portrait_hdpi
 
 # TWRP Stuff
@@ -53,3 +54,4 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_USE_NEW_MINADBD := true
 TW_EXTRA_LANGUAGES := true
 TW_EXCLUDE_SUPERSU := true
+TW_EXCLUDE_TWRPAPP := true
