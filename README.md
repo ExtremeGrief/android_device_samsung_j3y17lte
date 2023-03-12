@@ -6,6 +6,10 @@
 # Make sure you've synced the TWRP android-9.0
 # source.
 
+# Clone the repo
+git clone -b android-9.0 https://github.com/ExtremeGrief/android_device_samsung_j3y17lte.git device/samsung/j3y17lte
+
+
 $ . build/envsetup.sh # Prepare build environment.
 $ lunch omni_j3y17lte-eng # 'Lunch' the j3y17lte configuration.
 $ mka recoveryimage # Build.
